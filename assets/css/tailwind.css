@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+        @apply text-usalo-blue;
+    }
+.container {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+
+/* .container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 80rem) {
+    .container {
+        max-width: 80rem;
+    }
+}
+@media (min-width: 90rem) {
+    .container {
+        max-width: 90rem;
+    }
+} */
