@@ -111,6 +111,12 @@ const options = reactive({
     drag:true,
     perMove:1,
     autoWidth:true,
+    perPage:2,
+    breakpoints:{
+        1024:{
+            perPage:1
+        }
+    }
     
 })
 </script>
