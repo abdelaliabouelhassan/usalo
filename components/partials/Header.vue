@@ -2,12 +2,12 @@
     <header class="w-full fixed top-0 left-0 z-50">
         <div class=" flex flex-col relative ">
             <div class="w-full bg-white z-50 ">
-                <nav class="container px-5 py-[1.125rem] flex items-center justify-between ">
-                    <div></div>
-                    <nuxt-link to="/" class="h-6">
+                <nav class="container px-5 py-[1.125rem] flex items-center justify-between lg:py-3">
+                    <div class="lg:hidden"></div>
+                    <nuxt-link to="/" class="h-6 lg:h-[2.125rem]">
                         <img class="h-full object-contain" src="/images/logo.svg" alt="" srcset="">
                     </nuxt-link>
-                    <button class="menu-btn h-6 w-6 " @click="showMenu = !showMenu">
+                    <button class="menu-btn h-6 w-6 lg:hidden" @click="showMenu = !showMenu">
 
                             <svg class="h-full w-full" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
@@ -23,12 +23,21 @@
                             </svg>  -->
 
                     </button>
+                    <!-- big screen menu links -->
+                    <div class="hidden lg:flex z-40  items-center gap-x-6">
+                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Home</nuxt-link>
+                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Chi siamo</nuxt-link>
+                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">USALO! in dettaglio</nuxt-link>
+                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Sei un fornitore?</nuxt-link>
+                        <nuxt-link to="/" class=" text-lg font-semibold outline outline-1 outline-usalo-sky py-2 px-6 
+                            transition-[outline] duration-300 ease hover:outline-2">Contattaci</nuxt-link>
+                    </div>
                 </nav>
             </div>
 
             <!-- small screen menu -->
-            <div class="z-40  w-full flex justify-center transition-all duration-1000 ease-in-out  relative pb-48"
-                    :class="{'translate-y-0 h-fit ':showMenu, '-translate-y-[calc(100%+3.8rem)] h-0':!showMenu}">
+            <div class="z-40 absolute top-[3.75rem] left-0 w-full h-fit flex justify-center transition-all duration-1000 ease-in-out pb-48"
+                    :class="{'translate-y-0 ':showMenu, '-translate-y-[calc(100%+3.8rem)]':!showMenu}">
                 <!-- white-gear -top-[496px] -top-[1000px]-->
                 <div class="w-fit h-fit absolute bottom-0 left-1/2 -translate-x-1/2 z-30">
                     <div class="bg-white menu-gear-background h-[993px] w-[986px] shrink-0 transition-all duration-1000 ease-in-out pt-[3.75rem] box-content"
@@ -36,7 +45,7 @@
                     </div>
 
                 </div>
-               
+                <!--small screen menu links -->
                 <div class="z-40 w-full flex flex-col items-center gap-y-5 py-9 transition-opacity duration-700 ease-in-out"
                     :class="{'opacity-100':showMenu, 'opacity-0 ':!showMenu}">
                     <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Home</nuxt-link>
@@ -47,7 +56,6 @@
                         transition-[outline] duration-300 ease hover:outline-2">Contattaci</nuxt-link>
                 </div>
             </div>
-            <!-- -->
 
 
         </div>
