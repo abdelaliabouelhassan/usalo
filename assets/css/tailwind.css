@@ -16,3 +16,24 @@ html{
 .container {
     @apply w-full max-w-[90rem] mx-auto;
 }
+
+
+.accordion  .accordion-item .accordion-content {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+}
+  
+.accordion .accordion-item .accordion-header{
+  cursor: pointer;
+}
+
+.accordion .accordion-item.active .accordion-content {
+  height: auto;
+  transition: height 0.3s ease;
+}
+
+.accordion .accordion-cross path{
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
