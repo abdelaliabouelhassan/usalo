@@ -10,8 +10,8 @@
                     <h1 class="text-center md:text-start">Scopri se Usalo! fa al caso tuo</h1>
                     <div class="text-xl mt-6 text-center md:text-start lg:text-[1.75rem]">Hai già utilizzato la locazione operativa in passato? <br><br></div>
                     <div class="w-full flex justify-center gap-x-5 mt-8 md:justify-start">
-                        <button class="text-xl font-bold bg-white py-4 px-10 transition-[outline] hover:outline hover:outline-usalo-sky hover:outline-2">SI</button>
-                        <button class="text-xl font-bold bg-white py-4 px-10 transition-[outline] hover:outline hover:outline-usalo-sky hover:outline-2">NO</button>
+                        <button class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">SI</button>
+                        <button class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">NO</button>
                     </div>
                 </div>
             </div>
