@@ -2,7 +2,7 @@
     <footer class=" py-10 lg:py-20 bg-usalo-blue text-white">
         <div class="container px-5 flex flex-col gap-10 md:gap-32 lg:gap-x-0 sm:flex-row sm:justify-between">
             <nuxt-link to="/" class="sm:w-1/3 lg:w-full">
-                <img class="w-[9.5rem] lg:w-[12.625rem] object-contain" src="/images/logo_footer.svg" alt="" srcset="">
+                <img class="w-[9.5rem] lg:w-[12.625rem] object-contain" src="/images/logo2.svg" alt="" srcset="">
             </nuxt-link >
             <div class=" w-full  sm:w-2/3 lg:w-full">
                 <div class="flex flex-col gap-10 xs:flex-row md:gap-32">
