@@ -1,7 +1,9 @@
 <template>
     <div class="min-h-screen">
         <Header />
-        <slot />
+        <div class="mt-[3.75rem] lg:mt-[4.25rem] ">
+            <slot />
+        </div>
         <Footer />
     </div>
     

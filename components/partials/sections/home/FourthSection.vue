@@ -20,9 +20,9 @@
                     </div>
                     <div class="accordion-content">
                         <ul class="list-disc list-outside ml-6 flex flex-col gap-y-2 mt-3">
-                            <li > Artikel-­ und Leistungsstammdaten</li>
-                            <li> Artikelvarianten, Produkte­-Sets und Stücklisten</li>
-                            <li> Zubehör-­, Ersatz­- und Auswahlprodukte</li>
+                            <li>canoni completamente deducibili</li>
+                            <li>gestione contabile indipendentemente dal periodo di ammortamento</li>
+                            <li>il contratto non costituisce indebitamento</li>
                         </ul>
                     </div>
                 </div>
@@ -37,9 +37,8 @@
                     </div>
                     <div class="accordion-content">
                         <ul class="list-disc list-outside ml-6 flex flex-col gap-y-2 mt-3">
-                            <li > Artikel-­ und Leistungsstammdaten</li>
-                            <li> Artikelvarianten, Produkte­-Sets und Stücklisten</li>
-                            <li> Zubehör-­, Ersatz­- und Auswahlprodukte</li>
+                            <li>maggiore liquidità in azienda, migliorando il cash flow</li>
+                            <li>linea di credito alternativa al leasing e ai finanziamenti</li>
                         </ul>
                     </div>
                 </div>
@@ -54,9 +53,8 @@
                     </div>
                     <div class="accordion-content">
                         <ul class="list-disc list-outside ml-6 flex flex-col gap-y-2 mt-3">
-                            <li > Artikel-­ und Leistungsstammdaten</li>
-                            <li> Artikelvarianten, Produkte­-Sets und Stücklisten</li>
-                            <li> Zubehör-­, Ersatz­- und Auswahlprodukte</li>
+                            <li> durata del noleggio allineata al ciclo di vita del prodotto</li>
+                            <li> possibilità di inserire i servizi collegati alla fornitura del bene locato</li>
                         </ul>
                     </div>
                 </div>

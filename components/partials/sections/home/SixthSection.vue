@@ -28,14 +28,14 @@
                     <div class="flex flex-col gap-y-2">
                         <div class="font-bold text-lg lg:text-xl">Sono un:</div>
                         <div class="w-full flex justify-center gap-x-3 md:justify-start">
-                            <button @click="formData.userType = 'client'" class="w-full text-xl bg-white py-4 px-6 shadow-[inset_0_-2px_0_0_#aaa] 
+                            <button @click="formData.userType = 'client'" class="w-full text-xl bg-white py-4 px-6  
                                     transition-[box-shadow_background-color] duration-200  hover:shadow-[inset_0_-4px_0_0_#aaa] hover:bg-[#F2EBEB] "
-                                    :class="{'bg-white shadow-[inset_0_-2px_0_0_#041E42]':formData.userType === 'client'}">
+                                    :class="{'!shadow-[inset_0_-2px_0_0_#041E42]':formData.userType === 'client', 'shadow-[inset_0_-2px_0_0_#aaa]':formData.userType !== 'client'}">
                                 Cliente
                             </button>
-                            <button @click="formData.userType = 'supplier'" class="w-full text-xl bg-white py-4 px-6 shadow-[inset_0_-2px_0_0_#aaa] 
+                            <button @click="formData.userType = 'supplier'" class="w-full text-xl bg-white py-4 px-6
                                     transition-[box-shadow_background-color] duration-200  hover:shadow-[inset_0_-4px_0_0_#aaa] hover:bg-[#F2EBEB] "
-                                    :class="{'bg-white shadow-[inset_0_-2px_0_0_#041E42]':formData.userType === 'supplier'}">
+                                    :class="{'!shadow-[inset_0_-2px_0_0_#041E42]':formData.userType === 'supplier', 'shadow-[inset_0_-2px_0_0_#aaa]':formData.userType !== 'supplier'}">
                                 Fornitore
                             </button>
                         </div>
@@ -64,6 +64,10 @@ const formData = reactive({
 function submitForm(){
 
 }
+
+watch(()=>formData.userType , val=>{
+    console.log(val);
+})
 </script>
 <style scoped>
 .ggg{
