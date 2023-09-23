@@ -99,7 +99,6 @@
                             :class="{'-rotate-[77deg] w-[40%] xs:h-[40%] md:h-[40%] lg:h-[40%]':rotateStackedGears,'xs:h-[14.375rem]':!rotateStackedGears}">
                          
                         
-                        
                     </div>
                 </div>
                 
