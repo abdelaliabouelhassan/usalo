@@ -68,7 +68,7 @@
 
         <div class="w-full bg-usalo-blue container h-[33rem] px-1 pt-5 pb-16 sm:pt-6 overflow-hidden md:px-5
                     md:h-[40.875rem] md:py-16" @click="rotateStackedGears=!rotateStackedGears">
-            <div class="w-full h-full relative ">
+            <div class="w-full h-full relative md:max-w-[74.5rem] mx-auto">
                 <div class="font-kyrial-display-pro absolute top-1/2  text-2xl max-w-lg text-center px-5 w-full  left-1/2 -translate-x-1/2 font-thin text-white  
                      md:text-start md:max-w-lg md:top-[37%] md:translate-x-0 md:left-56 lg:max-w-[50rem] lg:text-5xl xl:max-w-[55rem] ">
                     <span>ItalRental ha ideato <span class="font-bold">Usalo!</span> la locazione evoluta per rispondere alle esigenze del mercato.</span>
@@ -76,25 +76,25 @@
                     <span class="transition-opacity duration-700 ease-in-out opacity-0" :class="{'opacity-100':rotateStackedGears}"> e superare i limiti attuali dei servizi di locazione commerciale.</span>
                 </div>
                 <!-- rotating gears -->
-                <div class="w-full h-full absolute ">
+                <div class="w-full h-full absolute md:w-fit md:aspect-square">
                     <div class="absolute w-full h-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 md:translate-x-0 md:left-0" >
-                        <img draggable="false" src="images/home/gear_1.svg" class="opacity-50 w-[14.375rem] xs:w-auto  aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
+                        <img draggable="false" src="/images/home/gear_1.svg" class="opacity-50 w-[14.375rem] xs:w-auto  aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
                                         lg:h-[25rem]" 
                                 :class="{'-rotate-90 w-full xs:h-full md:h-full lg:h-full ':rotateStackedGears,'xs:h-[14.375rem]':!rotateStackedGears }">
-                        <img draggable="false" src="images/home/gear_2.svg" class="opacity-50 w-[14.375rem] xs:w-auto  aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
+                        <img draggable="false" src="/images/home/gear_2.svg" class="opacity-50 w-[14.375rem] xs:w-auto  aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
                                     lg:h-[25rem]"
                             :class="{'-rotate-[92deg] w-[82%] xs:h-[82%] md:h-[82%] lg:h-[82%]':rotateStackedGears,'xs:h-[14.375rem] -rotate-[4deg]':!rotateStackedGears}">
 
-                        <img draggable="false" src="images/home/gear_3.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
+                        <img draggable="false" src="/images/home/gear_3.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
                                     lg:h-[25rem]" 
                             :class="{'-rotate-[92deg] w-[66%] xs:h-[66%] md:h-[66%] lg:h-[66%]':rotateStackedGears,'xs:h-[14.375rem] -rotate-[7deg]':!rotateStackedGears}">
                         
                         
-                        <img draggable="false" src="images/home/gear_4.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
+                        <img draggable="false" src="/images/home/gear_4.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
                                     lg:h-[25rem]" 
                             :class="{'-rotate-[92deg] w-[52%] xs:h-[52%] md:h-[52%] lg:h-[52%]':rotateStackedGears,'xs:h-[14.375rem] -rotate-[11deg]':!rotateStackedGears}">
                          
-                        <img draggable="false" src="images/home/gear_1.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
+                        <img draggable="false" src="/images/home/gear_1.svg" class="opacity-50 w-[14.375rem] xs:w-auto aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 transition-all duration-[1.2s] ease-in-out
                                     lg:h-[25rem]" 
                             :class="{'-rotate-[77deg] w-[40%] xs:h-[40%] md:h-[40%] lg:h-[40%]':rotateStackedGears,'xs:h-[14.375rem]':!rotateStackedGears}">
                          
