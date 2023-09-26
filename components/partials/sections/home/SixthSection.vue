@@ -1,5 +1,5 @@
 <template>
-    <section class="container bg-slat px-5 py-16 lg:py-20 ">
+    <section class="container bg-slat px-5 pb-16 lg:pb-20 ">
         <div class="flex flex-col lg:flex-row">
             <div class="w-full bg-usalo-blue text-white py-8 px-[2rem] lg:py-11  ">
                 <div class="w-full h-full flex flex-col lg:justify-center gap-x-5 max-w-md mx-auto lg:max-w-[29rem]">
@@ -39,7 +39,7 @@
                                 Fornitore
                             </button>
                         </div>
-                         <button type="submit" class="uppercase w-full text-white font-bold text-2xl bg-usalo-blue py-4 px-10 mt-10 
+                         <button type="submit" class="uppercase w-full text-white font-bold text-xl md:text-2xl bg-usalo-blue py-4 px-10 mt-10 
                                     transition-[background-color] duration-200  hover:bg-light-usalo-blue">
                                 invia dati
                         </button>
@@ -65,9 +65,7 @@ function submitForm(){
 
 }
 
-watch(()=>formData.userType , val=>{
-    console.log(val);
-})
+
 </script>
 <style scoped>
 .ggg{

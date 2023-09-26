@@ -69,7 +69,6 @@ function spin() {
         spinCount.value = 1
     }
     
-    
 }
 
 </script>
@@ -94,7 +93,7 @@ function spin() {
 
 
 .spin{
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
@@ -112,20 +111,6 @@ function spin() {
         transform: rotate(0deg);
     }
     50%{
-        transform: rotate(45deg);
-    }
-    70%{
-        transform: rotate(40deg);
-    }
-    100%{
-        transform: rotate(45deg);
-    }
-}
-@keyframes bigGearSpin2 {
-    0% {
-        transform: rotate(45deg);
-    }
-    50%{
         transform: rotate(90deg);
     }
     70%{
@@ -135,9 +120,23 @@ function spin() {
         transform: rotate(90deg);
     }
 }
-@keyframes bigGearSpin3 {
+@keyframes bigGearSpin2 {
     0% {
         transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    70%{
+        transform: rotate(175deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes bigGearSpin3 {
+    0% {
+        transform: rotate(180deg);
     }
     50%{
         transform: rotate(0deg);
@@ -164,20 +163,6 @@ function spin() {
         transform: rotate(0deg);
     }
     50%{
-        transform: rotate(-54deg);
-    }
-    70%{
-        transform: rotate(-42deg);
-    }
-    100%{
-        transform: rotate(-54deg);
-    }
-}
-@keyframes smallGearSpin2 {
-    0% {
-        transform: rotate(-54deg);
-    }
-    50%{
         transform: rotate(-108deg);
     }
     70%{
@@ -187,9 +172,23 @@ function spin() {
         transform: rotate(-108deg);
     }
 }
-@keyframes smallGearSpin3 {
+@keyframes smallGearSpin2 {
     0% {
         transform: rotate(-108deg);
+    }
+    50%{
+        transform: rotate(-216deg);
+    }
+    70%{
+        transform: rotate(-204deg);
+    }
+    100%{
+        transform: rotate(-216deg);
+    }
+}
+@keyframes smallGearSpin3 {
+    0% {
+        transform: rotate(-216deg);
     }
     50%{
         transform: rotate(0deg);
