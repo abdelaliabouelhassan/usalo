@@ -3,8 +3,8 @@
         <div class="container px-5 flex flex-col md:flex-row gap-x-8">
             <div class="w-full">
                 <div class="w-full flex flex-col md:w-full md:max-w-[33.75rem] gap-x-5">
-                    <h1 class="text-center md:text-start">Altri vantaggi della locazione</h1>
-                    <div class="text-lg mt-6 text-center md:text-start lg:text-xl font-light">Negli ultimi anni anche la locazione operativa tradizionale è stata scelta da un numero sempre maggiore di aziende per rinnovare la propria dotazione tecnica.<br><br></div>
+                    <h1 class="">Altri vantaggi della locazione</h1>
+                    <div class="text-lg mt-6 lg:text-xl font-light">Negli ultimi anni anche la locazione operativa tradizionale è stata scelta da un numero sempre maggiore di aziende per rinnovare la propria dotazione tecnica.<br><br></div>
                 </div>
             </div>
             
