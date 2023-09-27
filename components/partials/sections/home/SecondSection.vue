@@ -64,6 +64,7 @@ const text3 = ref(null)
 
 const smallGearCurrentRotation = ref('0deg')
 const bigGearCurrentRotation = ref('0deg')
+
 function spin() {
     bigGearSpinClass.value = `big-gear-spin${spinCount.value}`
     smallGearSpinClass.value = `small-gear-spin${spinCount.value}`
@@ -71,13 +72,11 @@ function spin() {
     if(spinCount.value > 3){
         spinCount.value = 1
     }
-    
 }
 
 
 onMounted(() => {
    
-
     let observer1 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
@@ -152,7 +151,7 @@ onMounted(() => {
 
 
 .spin{
-    animation-duration: 4s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
 }
