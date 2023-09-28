@@ -11,7 +11,9 @@
                     <div class="text-xl mt-6 text-center md:text-start lg:text-[1.75rem]">Hai già utilizzato la locazione operativa in passato? <br><br></div>
                     <div class="w-full flex justify-center gap-x-5 mt-8 md:justify-start">
                         <button @click="openPopUp('si')" class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">SI</button>
-                        <button @click="openPopUp('no')" class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">NO</button>
+                        <!-- <button @click="openPopUp('no')" class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">NO</button> -->
+                        <button @click="openPopUp('si')" class="text-xl font-bold bg-white py-4 px-10 transition-[box-shadow] duration-200  hover:ring-usalo-sky hover:ring-1">NO</button>
+
                     </div>
                 </div>
             </div>
