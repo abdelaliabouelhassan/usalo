@@ -1,5 +1,5 @@
 <template>
-    <section class=" bg-[#EDF1F8] py-16 lg:py-20" @click="spin" >
+    <section class=" bg-[#EDF1F8] py-16 lg:py-20"  >
         <div class="container px-5 overflow-hidden">
             <h1 class="w-full text-center">Perché Usalo! è unico</h1>
             <div class="mt-[2rem] flex flex-col md:flex-row md:items-center  md:gap-x-10 lg:mt-20 xl:gap-36">
@@ -32,9 +32,9 @@
                         </svg>
 
                         <transition name="gear-img">
-                            <img v-if="spinCount===1" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[9.4rem]" src="/images/home/second-section-img1.svg" alt="" srcset="">
-                            <img v-else-if="spinCount===2" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[7.8rem]" src="/images/home/second-section-img2.svg" alt="" srcset="">
-                            <img v-else-if="spinCount===3" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[9.2rem]" src="/images/home/second-section-img3.svg" alt="" srcset="">
+                            <img v-if="currentText===1" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[9.4rem]" src="/images/home/second-section-img1.svg" alt="" srcset="">
+                            <img v-else-if="currentText===2" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[7.8rem]" src="/images/home/second-section-img2.svg" alt="" srcset="">
+                            <img v-else-if="currentText===3" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:w-[9.2rem]" src="/images/home/second-section-img3.svg" alt="" srcset="">
                         </transition>
                         
                     </div>
@@ -42,9 +42,9 @@
                 </div>
                 <!-- text content -->
                 <div class="w-full flex flex-col gap-y-4 font-light mt-10 md:order-1 md:max-w-[26.875rem] lg:text-lg">
-                    <div ref="text1" class="transition-opacity" :class="{'opacity-40':spinCount!==1}">L'importo del <span class="font-bold">canone è collegato al valore</span> del bene: ogni anno pagherai meno del precedente!<br><br> </div>
-                    <div ref="text2" class="transition-opacity" :class="{'opacity-40':spinCount!==2}"><span class="font-bold">Non c'è scadenza:</span> potrai usare il bene fino a che vorrai, con un contratto che si rinnova tacitamente ogni anno.<br><br> </div>
-                    <div ref="text3" class="transition-opacity" :class="{'opacity-40':spinCount!==3}">In caso di uscita dal contratto, potrai beneficiare del possibile residuo valore del bene, presentandoci un acquirente!<br><br> </div>
+                    <div @click="spin1" ref="text1" class="transition-opacity cursor-pointer" :class="{'opacity-40':currentText!==1}">L'importo del <span class="font-bold">canone è collegato al valore</span> del bene: ogni anno pagherai meno del precedente!<br><br> </div>
+                    <div @click="spin2" ref="text2" class="transition-opacity cursor-pointer" :class="{'opacity-40':currentText!==2}"><span class="font-bold">Non c'è scadenza:</span> potrai usare il bene fino a che vorrai, con un contratto che si rinnova tacitamente ogni anno.<br><br> </div>
+                    <div @click="spin3" ref="text3" class="transition-opacity cursor-pointer" :class="{'opacity-40':currentText!==3}">In caso di uscita dal contratto, potrai beneficiare del possibile residuo valore del bene, presentandoci un acquirente!<br><br> </div>
                 </div>
             </div>
         </div>
@@ -55,23 +55,54 @@
 <script setup>
 
 
-const spinCount = ref(1)
+const currentText = ref(1)
 const bigGearSpinClass = ref('')
-const smallGearSpinClass = ref('')
+const smallGearSpinClass = ref('small-gear-spin1')
 const text1 = ref(null)
 const text2 = ref(null)
 const text3 = ref(null)
 
 const smallGearCurrentRotation = ref('0deg')
 const bigGearCurrentRotation = ref('0deg')
+// function spin() {
+//     bigGearSpinClass.value = `big-gear-spin${currentText.value}`
+//     smallGearSpinClass.value = `small-gear-spin${currentText.value}`
+//     currentText.value ++
+//     if(currentText.value > 3){
+//         currentText.value = 1
+//     }
+// }
+function spin1() {
+    currentText.value = 1
+    bigGearSpinClass.value = `big-gear-spin${currentText.value}`
+    smallGearSpinClass.value = `small-gear-spin${currentText.value}`
+    setTimeout(() => {
+        smallGearCurrentRotation.value = '0deg'
+        bigGearCurrentRotation.value = '0deg'
+    }, 1500);
+    
+}
+function spin2() {
+    currentText.value = 2
 
-function spin() {
-    bigGearSpinClass.value = `big-gear-spin${spinCount.value}`
-    smallGearSpinClass.value = `small-gear-spin${spinCount.value}`
-    spinCount.value ++
-    if(spinCount.value > 3){
-        spinCount.value = 1
-    }
+    bigGearSpinClass.value = `big-gear-spin${currentText.value}`
+    smallGearSpinClass.value = `small-gear-spin${currentText.value}`
+    setTimeout(() => {
+        smallGearCurrentRotation.value = '-72deg'
+        bigGearCurrentRotation.value = '36deg'
+    }, 1500);
+    
+}
+function spin3() {
+    currentText.value = 3
+
+    bigGearSpinClass.value = `big-gear-spin${currentText.value}`
+    smallGearSpinClass.value = `small-gear-spin${currentText.value}`
+    setTimeout(() => {
+        smallGearCurrentRotation.value = '-144deg'
+        bigGearCurrentRotation.value = '72deg'
+    }, 1500);
+   
 }
 
 
@@ -80,51 +111,31 @@ onMounted(() => {
     let observer1 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
-                bigGearSpinClass.value = `big-gear-spin${spinCount.value}`
-                smallGearSpinClass.value = `small-gear-spin${spinCount.value}`
-                spinCount.value = 2
-                smallGearCurrentRotation.value = '-72deg'
-                bigGearCurrentRotation.value = '-36deg'
+                spin1()
             }
         });
-        }, {threshold:0.9}
+        }, {threshold:1}
     );
     let observer2 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
-                bigGearSpinClass.value = `big-gear-spin${spinCount.value}`
-                smallGearSpinClass.value = `small-gear-spin${spinCount.value}`
-                if(smallGearCurrentRotation.value === '-72deg'){
-                    spinCount.value = 3
-                }else{
-                    spinCount.value = 1
-                }
-                smallGearCurrentRotation.value = '-144deg'
-                bigGearCurrentRotation.value = '72deg'
+                spin2()
             }
         });
-        }, {threshold:0.9}
+        }, {threshold:1}
     );
     let observer3 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting){
-                bigGearSpinClass.value = `big-gear-spin${spinCount.value}`
-                smallGearSpinClass.value = `small-gear-spin${spinCount.value}`
-                if(smallGearCurrentRotation.value === '-144deg'){
-                    spinCount.value = 1
-                }else{
-                    spinCount.value = 2
-                }
-                smallGearCurrentRotation.value = '0deg'
-                bigGearCurrentRotation.value = '0deg'
+                spin3()
             }
         });
-        }, {threshold:0.9}
+        }, {threshold:1}
     );
     
-    // observer1.observe(text1.value);
-    // observer2.observe(text2.value);
-    // observer3.observe(text3.value);
+    observer1.observe(text1.value);
+    observer2.observe(text2.value);
+    observer3.observe(text3.value);
     // observer4.observe(secondSection.value);
 })
 
@@ -165,36 +176,8 @@ onMounted(() => {
     animation-name: bigGearSpin3;
 }
 @keyframes bigGearSpin1 {
-    0% {
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(36deg);
-    }
-    70%{
-        transform: rotate(31deg);
-    }
-    100%{
-        transform: rotate(36deg);
-    }
-}
-@keyframes bigGearSpin2 {
-    0% {
-        transform: rotate(36deg);
-    }
-    50%{
-        transform: rotate(72deg);
-    }
-    70%{
-        transform: rotate(67deg);
-    }
-    100%{
-        transform: rotate(72deg);
-    }
-}
-@keyframes bigGearSpin3 {
-    0% {
-        transform: rotate(72deg);
+    0%{
+        transform: rotate(v-bind(bigGearCurrentRotation));
     }
     50%{
         transform: rotate(0deg);
@@ -206,6 +189,35 @@ onMounted(() => {
         transform: rotate(0deg);
     }
 }
+@keyframes bigGearSpin2 {
+    0%{
+        transform: rotate(v-bind(bigGearCurrentRotation));
+    }
+    50%{
+        transform: rotate(36deg);
+    }
+    70%{
+        transform: rotate(31deg);
+    }
+    100%{
+        transform: rotate(36deg);
+    }
+}
+@keyframes bigGearSpin3 {
+    0%{
+        transform: rotate(v-bind(bigGearCurrentRotation));
+    }
+    50%{
+        transform: rotate(72deg);
+    }
+    70%{
+        transform: rotate(67deg);
+    }
+    100%{
+        transform: rotate(72deg);
+    }
+}
+
 
 .small-gear-spin1{
     animation-name: smallGearSpin1;
@@ -217,36 +229,8 @@ onMounted(() => {
     animation-name: smallGearSpin3;
 }
 @keyframes smallGearSpin1 {
-    0% {
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(-72deg);
-    }
-    70%{
-        transform: rotate(-63deg);
-    }
-    100%{
-        transform: rotate(-72deg);
-    }
-}
-@keyframes smallGearSpin2 {
-    0% {
-        transform: rotate(-72deg);
-    }
-    50%{
-        transform: rotate(-144deg);
-    }
-    70%{
-        transform: rotate(-135deg);
-    }
-    100%{
-        transform: rotate(-144deg);
-    }
-}
-@keyframes smallGearSpin3 {
-    0% {
-        transform: rotate(-144deg);
+    0%{
+        transform: rotate(v-bind(smallGearCurrentRotation));
     }
     50%{
         transform: rotate(0deg);
@@ -258,6 +242,35 @@ onMounted(() => {
         transform: rotate(0deg);
     }
 }
+@keyframes smallGearSpin2 {
+    0%{
+        transform: rotate(v-bind(smallGearCurrentRotation));
+    }
+    50%{
+        transform: rotate(-72deg);
+    }
+    70%{
+        transform: rotate(-63deg);
+    }
+    100%{
+        transform: rotate(-72deg);
+    }
+}
+@keyframes smallGearSpin3 {
+    0%{
+        transform: rotate(v-bind(smallGearCurrentRotation));
+    }
+    50%{
+        transform: rotate(-144deg);
+    }
+    70%{
+        transform: rotate(-135deg);
+    }
+    100%{
+        transform: rotate(-144deg);
+    }
+}
+
 
 
 </style>
