@@ -136,13 +136,13 @@ onMounted(() => {
     }, 4000);
 
 
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            rotateStackedGears.value = entry.isIntersecting
-        });
-        }, {threshold:0.6}
-    );
-   observer.observe(secondPartContent.value);
+    // let observer = new IntersectionObserver((entries) => {
+    //     entries.forEach((entry) => {
+    //         rotateStackedGears.value = entry.isIntersecting
+    //     });
+    //     }, {threshold:0.6}
+    // );
+    // observer.observe(secondPartContent.value);
 })
 
 </script>
