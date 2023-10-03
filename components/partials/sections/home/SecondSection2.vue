@@ -1,7 +1,7 @@
 <template>
-    <section ref="section" class="bg-[#EDF1F8] py-16 lg:py-20"  >
+    <section id="home_second_section" ref="section" class="bg-[#EDF1F8] py-16 lg:py-20"  >
         <div class="container px-5 overflow-hidden">
-            <h1 class="w-full text-center">Perché Usalo! è unico</h1>
+            <h1 class="w-full">Perché Usalo! è unico</h1>
             <div class="mt-[2rem] flex flex-col md:flex-row md:items-center  md:gap-x-10 lg:mt-20 xl:gap-36">
                 <!-- gears -->
                 <div class="w-full flex items-center justify-center md:order-2 md:w-fit">
@@ -66,8 +66,7 @@ const text2 = ref(null)
 const text3 = ref(null)
 
 
-
-onMounted(() => {
+function initiateGsap() {
     gsap.registerPlugin(ScrollTrigger)
 
     const timeline = gsap.timeline(
@@ -75,10 +74,11 @@ onMounted(() => {
             scrollTrigger: {
                 trigger: section.value,
                 toggleActions:"restart none none none",
-                start: "top 4rem",
+                start: "top top",
                 end: "bottom top",
+                pinSpacing:false,
                 scrub: 1,
-                pin: true,
+                pin: false,
             }
         }
     )
@@ -90,8 +90,8 @@ onMounted(() => {
                             text2.value.style.opacity = '1';
                         }, 
                         onReverseComplete:()=>{currentText.value = 0}},0)
-    .to (".second-section-big-gear", {rotation:36},0)
-    .to (".second-section-small-gear", {rotation:-72},0)
+    .to (".second-section-big-gear", {rotation:36, duration:1.5},0)
+    .to (".second-section-small-gear", {rotation:-72, duration:1.5},0)
     // second part
     .from (text2.value, {opacity:0.5 ,y: innerHeight * 1.5,
                         onStart:()=>{
@@ -102,8 +102,8 @@ onMounted(() => {
                             text1.value.style.opacity = '0.5';
                         }, 
                         onReverseComplete:()=>{currentText.value = 1}},1)
-    .to (".second-section-big-gear", {rotation:72},1)
-    .to (".second-section-small-gear", {rotation:-144},1)
+    .to (".second-section-big-gear", {rotation:72, duration:1.5},1)
+    .to (".second-section-small-gear", {rotation:-144, duration:1.5},1)
     // third part
     .from (text3.value, {opacity:0.5 ,y: innerHeight * 1.5,
                         onStart:()=>{
@@ -114,8 +114,14 @@ onMounted(() => {
                             text2.value.style.opacity = '0.5';
                         }, 
                         onReverseComplete:()=>{currentText.value = 2}},2)
-    .to (".second-section-big-gear", {rotation:108},2)
-    .to (".second-section-small-gear", {rotation:-216},2)
+    .to (".second-section-big-gear", {rotation:108, duration:1.5},2)
+    .to (".second-section-small-gear", {rotation:-216, duration:1.5},2)
+
+    .to (section.value, {rotate:0},3)
+}
+
+onMounted(() => {
+    initiateGsap()
     
   
 })
