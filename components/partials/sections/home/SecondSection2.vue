@@ -1,7 +1,7 @@
 <template>
     <section ref="section" class="bg-[#EDF1F8] py-16 lg:py-20"  >
         <div class="container px-5 overflow-hidden">
-            <h1 class="w-full text-center">Perché Usalo! è unico</h1>
+            <h1 class="w-full">Perché Usalo! è unico</h1>
             <div class="mt-[2rem] flex flex-col md:flex-row md:items-center  md:gap-x-10 lg:mt-20 xl:gap-36">
                 <!-- gears -->
                 <div class="w-full flex items-center justify-center md:order-2 md:w-fit">
@@ -75,7 +75,7 @@ onMounted(() => {
             scrollTrigger: {
                 trigger: section.value,
                 toggleActions:"restart none none none",
-                start: "top 4rem",
+                start: "top top",
                 end: "bottom top",
                 scrub: 1,
                 pin: true,
@@ -116,6 +116,8 @@ onMounted(() => {
                         onReverseComplete:()=>{currentText.value = 2}},2)
     .to (".second-section-big-gear", {rotation:108},2)
     .to (".second-section-small-gear", {rotation:-216},2)
+
+    .to (section.value, {rotate:0},3)
     
   
 })
