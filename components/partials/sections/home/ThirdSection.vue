@@ -20,24 +20,16 @@
 
         </div>
 
-        <!-- popup modal -->
-        <BaseModal :show="openModal" @close="openModal =false">
-            <!-- si -->
-            <div v-show="popup === 'si'" class="container px-5" data-tf-live="01HAY6S9GPWGK0P80Z3CMWWE32"></div>
-            <!-- no -->
-            <div v-show="popup === 'no'" class="container px-5" data-tf-live="01HAY759D1263PXCGRKW5HVY9N"></div>
-        </BaseModal>
+        
         
     </section>
 </template>
 
 <script setup>
-import BaseModal from '@/components/UI/BaseModal.vue'
-const openModal = ref(false)
-const popup = ref('si')
+
+const emit = defineEmits(['openPopUp'])
 function openPopUp(name){
-    openModal.value = true
-    popup.value = name
+    emit('openPopUp',name)
 }
 </script>
 

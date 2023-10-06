@@ -7,7 +7,7 @@
     leave-from-class="opacity-100 translate-y-0 sm:scale-100"
     leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 >
-            <div v-show="show" @click.self="close" class="w-full h-full fixed top-0 left-0 bg-black/30
+            <div v-show="show" @click.self="close" class="w-full h-screen fixed top-0 left-0 bg-black/30
                 z-[200] flex items-center justify-center" scroll-region>
                 
                 
