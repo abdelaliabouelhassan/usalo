@@ -1,34 +1,26 @@
 <template>
-    <header class="w-full fixed top-0 left-0 z-50">
-        <div class=" flex flex-col relative ">
-            <div class="w-full bg-white z-50 ">
+    <header class="fixed top-0 left-0 z-[100] w-full">
+        <div class="relative flex flex-col ">
+            <div class="z-50 w-full bg-white ">
                 <nav class="container px-5 py-[1.125rem] flex items-center justify-between lg:py-3">
                     <div class="lg:hidden"></div>
                     <nuxt-link to="/" class="h-6 lg:h-[2.125rem]">
-                        <img class="h-full object-contain" src="/images/logo.svg" alt="" srcset="">
+                        <img class="object-contain h-full" src="/images/logo.svg" alt="" srcset="">
                     </nuxt-link>
-                    <button class="menu-btn h-6 w-6 lg:hidden" @click="showMenu = !showMenu">
+                    <button class="w-6 h-6 menu-btn lg:hidden" @click="Toggle">
 
-                            <svg class="h-full w-full" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M1 7H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M1 13H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
+                            <svg id="menuToggle" class="w-full h-full" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id='path1' d="M1 1H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
+                                <path id='path2' d="M1 7H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
+                                <path id='path3' d="M1 13H17" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
                             </svg>
-
-
-                            <!-- <svg v-else class="h-full w-full absolute top-0 left-0" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7L9 1" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M9 1L17 7" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M9 1V13" stroke="#418FDE" stroke-width="2" stroke-linecap="round"/>
-                            </svg>  -->
-
                     </button>
                     <!-- big screen menu links -->
-                    <div class="hidden lg:flex z-40  items-center gap-x-6">
-                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Home</nuxt-link>
+                    <div class="z-40 items-center hidden lg:flex gap-x-6">
+                        <!-- <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Home</nuxt-link>
                         <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Chi siamo</nuxt-link>
                         <nuxt-link to="/" class="py-2 hover:text-usalo-sky">USALO! in dettaglio</nuxt-link>
-                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Sei un fornitore?</nuxt-link>
+                        <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Sei un fornitore?</nuxt-link> -->
                         <nuxt-link to="/" class=" text-lg font-semibold ring-1 ring-usalo-sky py-2 px-6 
                             transition-[box-shadow] duration-200 ease hover:ring-2 box-content">Contattaci</nuxt-link>
                     </div>
@@ -39,14 +31,14 @@
             <div class="z-40 absolute top-[3.75rem] left-0 w-full h-fit flex justify-center transition-all duration-1000 ease-in-out pb-48"
                     :class="{'translate-y-0 ':showMenu, '-translate-y-[calc(100%+3.8rem)]':!showMenu}">
                 <!-- white-gear -top-[496px] -top-[1000px]-->
-                <div class="w-fit h-fit absolute bottom-0 left-1/2 -translate-x-1/2 z-30">
+                <div class="absolute bottom-0 z-30 -translate-x-1/2 w-fit h-fit left-1/2">
                     <div class="bg-white menu-gear-background h-[993px] w-[986px] shrink-0 transition-all duration-1000 ease-in-out pt-[3.75rem] box-content"
                         :class="{'rotate-180':showMenu, 'rotate-0':!showMenu}">
                     </div>
 
                 </div>
                 <!--small screen menu links -->
-                <div class="z-40 w-full flex flex-col items-center gap-y-5 py-9 transition-opacity duration-700 ease-in-out"
+                <div class="z-40 flex flex-col items-center w-full transition-opacity duration-700 ease-in-out gap-y-5 py-9"
                     :class="{'opacity-100':showMenu, 'opacity-0 ':!showMenu}">
                     <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Home</nuxt-link>
                     <nuxt-link to="/" class="py-2 hover:text-usalo-sky">Chi siamo</nuxt-link>
@@ -63,6 +55,7 @@
     </header>
 </template>
 <script setup>
+import {gsap} from "gsap";
     const showMenu = ref(false)
     function resizeHandler() {
         if(window.innerWidth >=1024 ){
@@ -74,6 +67,14 @@
         if(!clickedInsideHeader){
             showMenu.value = false
         }
+    }
+    function Toggle() {
+      
+        const tl = gsap.timeline()
+        tl.to('#path1',{duration:0.5,attr:{d:showMenu.value ? 'M1 1H17' : 'M1 7L9 1'}})
+        tl.to('#path2',{duration:0.5,attr:{d:showMenu.value ? 'M1 7H17' : 'M9 1L17 7'}},'-=0.5')
+        tl.to('#path3',{duration:0.5,attr:{d:showMenu.value ? 'M1 13H17' : 'M9 1V13'}},'-=0.5')
+          showMenu.value = !showMenu.value
     }
     onMounted(() => {
         window.addEventListener('resize',resizeHandler)
